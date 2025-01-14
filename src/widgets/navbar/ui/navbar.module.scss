@@ -1,0 +1,48 @@
+@use '@/shared/assets/scss/functions/to-rem' as *;
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding-top: toRem(24);
+  border-bottom: toRem(1) solid #181651;
+
+  .navbar-container {
+    display: flex;
+    align-items: flex-end;
+    gap: toRem(20);
+    width: 80%;
+    max-width: toRem(900);
+
+    @media (min-width: 900px) {
+      gap: toRem(32);
+    }
+
+    .navbar-button {
+      transition: 300ms border-bottom;
+      font-size: toRem(18);
+      font-weight: 200;
+      background: transparent;
+
+      border: none;
+      border-radius: none;
+      border-bottom: toRem(2) solid transparent;
+
+      padding-bottom: toRem(24);
+
+      @media (min-width: 900px) {
+        font-size: toRem(24);
+      }
+
+      &__active {
+        background: #201e6d;
+        border-bottom: toRem(2) solid #201e6d;
+      }
+
+      &:hover {
+        background: #201e6d;
+      }
+    }
+  }
+}

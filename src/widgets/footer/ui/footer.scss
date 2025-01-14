@@ -1,0 +1,22 @@
+@use 'sass:color';
+@use '@/shared/assets/scss/functions/to-rem' as *;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  padding: toRem(50);
+  font-weight: 200;
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    gap: toRem(16);
+    max-width: toRem(900);
+    width: 100%;
+
+    align-items: center;
+    font-size: toRem(18);
+  }
+}

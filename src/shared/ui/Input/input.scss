@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use '@/shared/assets/scss/functions/to-rem' as *;
+
+.input:not([type='checkbox']) {
+  transition: 200ms;
+  display: block;
+  outline: none;
+  font-weight: 200;
+  font-size: toRem(18);
+
+  width: 100%;
+  padding: toRem(8);
+  margin-bottom: toRem(24);
+
+  border: none;
+  color: white;
+  background: #201e6d;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover,
+  &:focus {
+    &:not(:disabled) {
+      background: color.adjust(#201e6d, $lightness: 15%);
+    }
+  }
+
+  &::placeholder {
+    color: #bcb4e7;
+  }
+}

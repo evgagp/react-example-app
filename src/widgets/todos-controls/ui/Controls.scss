@@ -1,0 +1,23 @@
+@use '@/shared/assets/scss/functions/to-rem' as *;
+
+.todos-control {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(8);
+
+  width: 100%;
+
+  margin: {
+    top: toRem(16);
+    bottom: toRem(16);
+  }
+
+  @media screen and (min-width: 612px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .todos-button {
+    width: 100%;
+  }
+}

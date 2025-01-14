@@ -1,0 +1,24 @@
+@use 'sass:color';
+
+a {
+  transition: color 200ms;
+  color: color.adjust(white, $lightness: -35%, $space: hsl);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: white;
+
+    &:visited {
+      color: #519ace;
+    }
+  }
+
+  &:visited {
+    color: #306489;
+  }
+
+  &:active {
+    color: color.adjust(white, $lightness: -15%, $space: hsl);
+  }
+}

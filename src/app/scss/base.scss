@@ -1,0 +1,44 @@
+@use 'sass:meta';
+@use 'sass:color';
+
+@use './tag-a.scss';
+@use './typography/fonts';
+@use '@/shared/assets/scss/functions/to-rem' as *;
+@use '@/shared/assets/scss/functions/colors' as *;
+@use '@/shared/assets/scss/mixins/no-copy' as *;
+
+@include meta.load-css('react-loading-skeleton/dist/skeleton.css');
+@include meta.load-css('gardevoir/dist/index.css');
+
+html {
+  font-family: 'Inter', serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #050719;
+  color: #e1e1e1;
+}
+
+.user-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 80%;
+}
+
+.container {
+  max-width: toRem(900);
+  width: 100%;
+}

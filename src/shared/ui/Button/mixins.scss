@@ -1,0 +1,70 @@
+@use 'sass:meta';
+@use 'sass:color';
+@use '@/shared/assets/scss/mixins/no-copy' as *;
+@use '@/shared/assets/scss/functions/colors' as *;
+
+$themeColors: (
+  'default': #000000,
+  'secondary': #384055,
+  'primary': #201e6d,
+  'success': #336940,
+  'info': #17a2b8,
+  'warning': #896703,
+  'danger': #cb2626,
+);
+
+$button-transition-default: 200ms;
+$button-radius-default: 0;
+
+@mixin default_button_properties_mixin($btnColor, $textColor) {
+  background: $btnColor;
+  color: $textColor;
+  border: 1px solid $btnColor;
+
+  &:hover,
+  &:focus {
+    background: color.adjust($btnColor, $lightness: 5%, $space: hsl);
+  }
+
+  &:active {
+    background: $btnColor;
+  }
+
+  &__active {
+    background: color.adjust($btnColor, $lightness: -15%, $space: hsl) !important;
+    border-color: color.adjust($btnColor, $lightness: -15%, $space: hsl) !important;
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: color.adjust($btnColor, $lightness: 20%, $space: hsl) !important;
+    border-color: color.adjust($btnColor, $lightness: 20%, $space: hsl) !important;
+
+    @include noCopy();
+  }
+}
+
+@mixin button_mixin($btnColor) {
+  $textColor: text-color($btnColor);
+
+  @if meta.type-of($btnColor) == 'color' {
+    @include default_button_properties_mixin($btnColor, $textColor);
+  } @else {
+    @warn "Переменная $btnColor для варианта #{$buttonVariant} не является валидным цветом!";
+  }
+}
+
+@mixin buttons_auto_mixin() {
+  @each $buttonVariant, $btnColor in $themeColors {
+    $textColor: text-color($btnColor);
+
+    @if meta.type-of($btnColor) == 'color' {
+      &_#{$buttonVariant} {
+        @include default_button_properties_mixin($btnColor, $textColor);
+      }
+    } @else {
+      @warn "Переменная $btnColor для варианта #{$buttonVariant} не является валидным цветом!";
+    }
+  }
+}

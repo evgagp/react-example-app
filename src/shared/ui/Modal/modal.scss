@@ -1,0 +1,76 @@
+.modal__container {
+  cursor: pointer;
+  overflow-y: auto;
+  transition: 500ms ease opacity;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: #0d0c2e90;
+  padding: 16px 0;
+
+  animation: toggleModalAnimation 0.5s ease;
+}
+
+.modal__body {
+  cursor: default;
+  display: block;
+  overflow: hidden;
+  background: #120f49;
+  margin: auto;
+  max-width: 95%;
+  width: max-content;
+  box-shadow: 0 0 100px 50px #201e6d;
+
+  animation: toggleModalAnimationBody 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.modal-open {
+  transition: 300ms;
+  overflow: hidden;
+}
+
+.modal-open__blur {
+  transition: opacity 0.3s;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background: #2b2b2b84;
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(5px);
+}
+
+.modal-open__blur__show {
+  opacity: 1;
+  transform: scale(1.5);
+  filter: blur(30px);
+}
+
+@keyframes toggleModalAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toggleModalAnimationBody {
+  0% {
+    opacity: 0;
+    scale: 1.4;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}

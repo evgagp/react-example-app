@@ -1,0 +1,24 @@
+@use 'sass:color';
+@use '@/shared/assets/scss/functions/to-rem' as *;
+@use '@/shared/ui/Input/input' as *;
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding: toRem(40);
+  max-width: toRem(567);
+
+  .add-task-form__label {
+    cursor: pointer;
+    display: block;
+    font-weight: 200;
+    font-size: toRem(24);
+    margin-bottom: toRem(16);
+  }
+
+  .add-task-form__input {
+    @extend .input;
+  }
+}

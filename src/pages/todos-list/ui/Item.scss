@@ -1,0 +1,72 @@
+@use '@/shared/assets/scss/functions/to-rem' as *;
+
+.todos-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: toRem(16);
+  margin-bottom: toRem(16);
+
+  border: toRem(8) solid transparent;
+  background: #15143f;
+
+  @media screen and (min-width: 768px) {
+    gap: toRem(32);
+    flex-direction: row;
+    margin-bottom: 0rem;
+    background: none;
+  }
+
+  &:hover {
+    background: #15143f;
+  }
+
+  .todos-checkbox {
+    input[type='checkbox'] {
+      appearance: none;
+      width: toRem(16);
+      height: toRem(16);
+      cursor: pointer;
+
+      &:hover {
+        &::after {
+          transform: scale(1.25);
+        }
+      }
+
+      &::after {
+        transition: 200ms;
+
+        content: '';
+        display: block;
+        width: toRem(16);
+        height: toRem(16);
+        background: #1b1967;
+        border: toRem(1) solid #4742ca;
+      }
+
+      &:checked {
+        &::after {
+          background: #4742ca;
+        }
+      }
+    }
+  }
+
+  .todos-text {
+    cursor: pointer;
+
+    display: block;
+    font-weight: 200;
+    min-width: 100%;
+  }
+}
+
+.todos-item-row {
+  display: flex;
+  align-items: center;
+  gap: toRem(16);
+
+  width: 100%;
+  margin-right: auto;
+}
