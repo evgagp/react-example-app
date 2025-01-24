@@ -13,7 +13,6 @@ export default defineConfig({
       include: '**/*.svg?react',
     }),
   ],
-
   css: {
     preprocessorOptions: {
       scss: {
