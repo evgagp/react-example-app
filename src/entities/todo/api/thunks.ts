@@ -1,11 +1,8 @@
 import axios from 'axios';
-
-
 import { todosSelectStatus } from '../model/slice';
 import { ITodosItem } from '../model/types';
 import { List } from '@/shared/models';
 import { createAppAsyncThunk } from '@/shared/store';
-
 
 export const fetchTodosList = createAppAsyncThunk(
   'todos/fetch',
