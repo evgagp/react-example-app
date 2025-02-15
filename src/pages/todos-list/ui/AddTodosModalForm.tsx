@@ -1,6 +1,6 @@
 import './AddTodosModalForm.scss';
 import { useTodos } from '@/entities/todo';
-import { callToast } from '@/shared/lib';
+import { callDefaultToast } from '@/shared/lib';
 import { Button, Input, Modal } from '@/shared/ui';
 import { ChangeEvent, FC, MouseEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -30,7 +30,7 @@ const AddTodoModalFrom: FC<IAddTodoModalFromProps> = ({ isOpen, handleSetShowMod
 
     addTodos(inputTodosDescriptionValue)
       .then(() => {
-        callToast(`Task is added`, {
+        callDefaultToast(`Task is added`, {
           theme: 'colored',
           style: {
             background: '#307337',
@@ -43,7 +43,7 @@ const AddTodoModalFrom: FC<IAddTodoModalFromProps> = ({ isOpen, handleSetShowMod
         setInputTodosDescriptionValue('');
       })
       .catch(() => {
-        callToast('Error: Form is empty!', {
+        callDefaultToast('Error: Form is empty!', {
           theme: 'colored',
           style: {
             background: '#cb2626',

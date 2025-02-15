@@ -1,6 +1,6 @@
 import { Flip, toast, ToastOptions } from 'react-toastify';
 
-export const callToast = (text: string, options?: ToastOptions | undefined | null) => {
+export const callDefaultToast = (text: string, options?: ToastOptions | undefined | null) => {
   toast(text, {
     pauseOnHover: true,
     closeOnClick: true,
@@ -11,4 +11,4 @@ export const callToast = (text: string, options?: ToastOptions | undefined | nul
   });
 };
 
-export default callToast;
+export default toast;

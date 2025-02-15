@@ -13,5 +13,3 @@ export const contactsSlice = createSlice({
   initialState,
   reducers,
 });
-
-export default contactsSlice;

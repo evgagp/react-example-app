@@ -22,7 +22,7 @@ export const buttonVariant: Record<ButtonVariantTypes, string> = {
 } as const;
 
 export const Button: FC<IButtonProps> = memo(({ variant = 'default', isActive, className, ref, ...rest }) => {
-  const classNames = cn([
+  const classNames: string = cn([
     className,
     'button',
     buttonVariant[variant],
