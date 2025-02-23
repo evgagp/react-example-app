@@ -13,7 +13,7 @@ export const TodosControl: React.FunctionComponent<ITodosControlProps> = memo(({
   return (
     <div className="container">
       <div className={'todos-control'}>
-        <Button className="todos-button" variant={'primary'} onClick={fetchTodos}>
+        <Button className="todos-button" variant="primary" onClick={fetchTodos}>
           Fetch data
         </Button>
 

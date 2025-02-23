@@ -1,5 +1,5 @@
 import { RootPage } from '@/pages/root';
-import { UserLayout } from '@/app/layouts';
+import { UserLayout } from '../layouts';
 import { TodosListPage } from '@/pages/todos-list';
 import { route } from './model/route';
 
