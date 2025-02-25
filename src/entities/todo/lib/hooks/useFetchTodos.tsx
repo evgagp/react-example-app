@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { fetchTodosList } from '../../api/thunks';
-import { useAppDispatch, useAppSelector } from '@/shared/store';
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 
 export interface IUseFetchTodoProps {
   autoFetch?: boolean | undefined | null;

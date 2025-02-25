@@ -1,4 +1,8 @@
-declare type RootState = ReturnType<typeof store.getState>;
-declare type AppDispatch = typeof store.dispatch;
-declare type AppStore = typeof store;
-declare type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, UnknownAction>;
+import store from ".";
+
+declare global {
+  type RootState = ReturnType<typeof store.getState>;
+  type AppDispatch = typeof store.dispatch;
+  type AppStore = typeof store;
+  type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, UnknownAction>;
+}
