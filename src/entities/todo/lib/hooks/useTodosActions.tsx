@@ -7,7 +7,8 @@ import {
   todosRemovedLast,
   todosSelectAll,
 } from '../../model/slice';
-import { useAppDispatch, useAppSelector } from '@/shared/store';
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
+
 
 interface INewTodos {
   id: number;

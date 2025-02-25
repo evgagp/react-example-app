@@ -1,8 +1,8 @@
 import { useCallback, useDeferredValue, useEffect, useState } from 'react';
-import { useAppSelector } from '@/shared/store';
 import { todosSelectAll } from '../../model/slice';
 import { List } from '@/shared/models';
 import { ITodosItem } from '../../model/types';
+import { useAppSelector } from '@/shared/lib/hooks';
 
 interface IQuery {
   query: string;
