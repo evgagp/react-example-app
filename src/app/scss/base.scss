@@ -3,6 +3,7 @@
 
 @use './tag-a.scss';
 @use './typography/fonts';
+
 @use '@/shared/assets/scss/functions/to-rem' as *;
 @use '@/shared/assets/scss/functions/colors' as *;
 @use '@/shared/assets/scss/mixins/no-copy' as *;
