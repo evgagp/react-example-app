@@ -4,13 +4,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button', // Указываем путь к компоненту в Storybook
+  title: 'Components/Button',
   component: Button,
   parameters: {
-    layout: 'centered', // Центрируем компонент в Storybook
+    layout: 'centered',
     docs: {
       description: {
-        component: 'Кнопка с различными вариантами стилей и состояний.', // Описание компонента
+        component: 'Кнопка с различными вариантами стилей и состояний.',
       },
     },
   },
