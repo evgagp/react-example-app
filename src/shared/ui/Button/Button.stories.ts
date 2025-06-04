@@ -1,4 +1,4 @@
-import { Button, buttonVariant } from './Button';
+import { Button, buttonVariant } from './ui/Button';
 import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Button>;

@@ -1,5 +1,5 @@
-export * from './Button';
-export * from './Input';
-export * from './Modal';
-export * from './Fallback';
-export * from './Portal'
+export { Button } from './Button';
+export { Input } from './Input';
+export { Modal } from './Modal/ui';
+export { Fallback } from './Fallback';
+export { Portal } from './Portal';
