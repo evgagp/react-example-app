@@ -1,14 +1,14 @@
 import React from 'react';
 import { Portal } from '@/shared/ui';
-import './modal.scss';
+import '../assets/styles/modal.scss';
 
-interface IModalProps extends React.PropsWithChildren {
+interface ComponentProps extends React.PropsWithChildren {
   isOpen: boolean;
   onClose: (e: React.MouseEvent<HTMLDivElement>) => void;
   _k?: string | null;
 }
 
-export const Modal: React.FC<IModalProps> = ({ isOpen, onClose, children, _k = null }) => {
+export const Modal: React.FC<ComponentProps> = ({ isOpen, onClose, children, _k = null }) => {
   const [isShow, setIsShow] = React.useState<boolean>(false);
 
   React.useLayoutEffect(() => {

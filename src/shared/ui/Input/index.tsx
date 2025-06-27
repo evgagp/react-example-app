@@ -1,13 +1,13 @@
-import './input.scss';
+import './assets/styles/input.scss';
 import { ForwardedRef, memo } from 'react';
 
-interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface ComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   label?: string;
   ref?: ForwardedRef<HTMLInputElement>;
 }
 
-export const Input: React.FC<IInputProps> = memo(({ name, ref, className, ...rest }) => {
+export const Input: React.FC<ComponentProps> = memo(({ name, ref, className, ...rest }) => {
   return <input className={className || 'input'} ref={ref} id={rest.id ?? (name && name)} {...rest} />;
 });
 
