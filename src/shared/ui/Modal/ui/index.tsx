@@ -1,6 +1,6 @@
 import React from 'react';
 import { Portal } from '@/shared/ui';
-import './modal.scss';
+import '../assets/styles/modal.scss';
 
 interface ComponentProps extends React.PropsWithChildren {
   isOpen: boolean;

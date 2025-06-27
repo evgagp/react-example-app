@@ -1,4 +1,4 @@
-import './button.scss';
+import './assets/styles/button.scss';
 import { ComponentProps, FC, memo, Ref } from 'react';
 import cn from 'classnames';
 

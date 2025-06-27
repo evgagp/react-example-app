@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use '@/shared/assets/scss/functions/to-rem' as *;
-@use '@/shared/ui/Input/input' as *;
+@use '@/shared/ui/Input/assets/styles/input' as *;
 
 .add-task-form {
   display: flex;

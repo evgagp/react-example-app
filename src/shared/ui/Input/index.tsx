@@ -1,4 +1,4 @@
-import './input.scss';
+import './assets/styles/input.scss';
 import { ForwardedRef, memo } from 'react';
 
 interface ComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
