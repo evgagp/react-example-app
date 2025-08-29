@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { fetchTodosList } from '../../api/thunks';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 
@@ -16,8 +16,9 @@ interface IUseReturnFetchTodos {
 export const useFetchTodos = ({ autoFetch = false }: IUseFetchTodoProps = {}) => {
   const dispatch = useAppDispatch();
   const { status, error } = useAppSelector(state => state.todos);
+  const isIgnoreFetchEffect = useRef(false);
 
-  const errorMsg = error ? error.message : '';
+  const errorMsg = error?.message ?? '';
   const isError = status === 'rejected' || error;
   const isPending = status === 'pending';
 
@@ -26,14 +27,11 @@ export const useFetchTodos = ({ autoFetch = false }: IUseFetchTodoProps = {}) =>
   }, []);
 
   useEffect(() => {
-    let ignoreCurrentEffect = false;
-
-    if (status === 'idle' && !ignoreCurrentEffect && autoFetch) {
-      fetchTodos();
-    }
+    if (isIgnoreFetchEffect.current) return;
+    if (status === 'idle' && autoFetch) fetchTodos();
 
     return () => {
-      ignoreCurrentEffect = true;
+      isIgnoreFetchEffect.current = true;
     };
   }, []);
 
